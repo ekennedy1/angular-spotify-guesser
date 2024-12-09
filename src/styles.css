@@ -1,0 +1,150 @@
+/* styles.css */
+
+body {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+  }
+  
+  button, input, select {
+    background-color: #1db954; /* Spotify green for buttons */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+  
+  button:hover, input:hover, select:hover {
+    background-color: #1ed760;
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+  }
+  
+  th {
+    color: #1db954;
+  }
+  
+  .music-player button {
+    margin: 5px;
+  }
+  
+  .music-player {
+    margin: 20px 0;
+  }
+  
+  h1, h2 {
+    color: #1db954;
+    font-size: 2em;
+  }
+  
+  label {
+    display: block;
+    margin-top: 15px;
+    color: #b3b3b3; /* Softer color for labels */
+  }
+  
+  input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    background-color: #333;
+    color: #ffffff;
+  }
+  
+  p {
+    font-size: 1.2em;
+  }
+  
+  .counters p {
+    margin: 5px 0;
+  }
+  
+  .game-over {
+    color: #ff4d4d; /* Red color for game over message */
+  }
+  
+  .clear-btn {
+    background-color: #e74c3c; /* Red button for clearing leaderboard */
+  }
+  
+  .clear-btn:hover {
+    background-color: #ff6b6b;
+  }
+  
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the entire navbar horizontally */
+    align-items: center;
+    background-color: #121212;
+    border-bottom: 3px solid black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; /* Ensure navbar stretches across the full width */
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: #1db954;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 30px; /* Space between the icons */
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+    transition: filter 0.3s ease;
+}
+
+.nav-link:hover .nav-icon {
+    filter: brightness(1.2);
+}
+
+.nav-text {
+    font-size: 1em;
+    color: #ffffff;
+    display: none;
+}
+
+.nav-link:hover .nav-text {
+    display: block;
+    color: #1db954;
+}
+
+  

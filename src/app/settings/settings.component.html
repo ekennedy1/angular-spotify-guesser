@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Game Settings</h2>
+  <label for="difficulty">Difficulty:</label>
+  <select id="difficulty" [(ngModel)]="selectedDifficulty">
+    <option *ngFor="let difficulty of difficulties" [value]="difficulty">{{ difficulty }}</option>
+  </select>
+
+  <label for="artist">Artist:</label>
+  <select id="artist" [(ngModel)]="selectedArtist" (change)="onArtistSelect()">
+    <option *ngFor="let artist of artists" [value]="artist">{{ artist }}</option>
+  </select>
+
+  <label for="decade">Decade:</label>
+  <select id="decade" [(ngModel)]="selectedDecade" (change)="onDecadeSelect()">
+    <option *ngFor="let decade of decades" [value]="decade">{{ decade }}</option>
+  </select>
+
+  <button (click)="saveSettings()">Save</button>
+</div>

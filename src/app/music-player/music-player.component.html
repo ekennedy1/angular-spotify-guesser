@@ -1,0 +1,13 @@
+<!-- music-player.component.html -->
+<div class="music-player">
+    <img
+      (click)="togglePlayPause()"
+      [src]="isPlaying ? 'assets/pause-button-inverted.png' : 'assets/430-4300458_play-spotify-play-button-png.png'"
+      alt="Play/Pause"
+      class="play-pause-icon"
+      [class.playing]="isPlaying"
+    />
+    <div *ngIf="loading">Loading track...</div>
+  </div>
+  
+  

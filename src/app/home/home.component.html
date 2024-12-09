@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="container">
+    <!-- Start Game Button (Only appears if game hasn't started and gameOverMessage isn't set) -->
+    <button *ngIf="!gameStarted && !gameOverMessage" (click)="startGame()">Start Game</button>
+
+    <!-- Game Interface, only visible when game has started -->
+    <div *ngIf="gameStarted">
+      <!-- Display Counters -->
+      <div class="counters">
+        <p>Correct: {{ correctCount }}</p>
+        <p>Wrong: {{ wrongCount }}</p>
+        <p>Round: {{ roundNumber }} / {{ maxRounds }}</p>
+      </div>
+
+      <!-- Song Image Placeholder -->
+      <div class="song-image">
+        <img [src]="currentImage" alt="Song Image" class="song-placeholder" />
+      </div>
+
+      <!-- Music Player Controls -->
+      <app-music-player *ngIf="trackId" [trackId]="trackId"></app-music-player>
+
+      <!-- Song Guess Section -->
+      <div *ngIf="trackId">
+        <label for="songGuess">Guess the Song Name:</label>
+        <input id="songGuess" type="text" [(ngModel)]="userGuess" placeholder="Enter song name" />
+
+        <!-- Conditionally render Submit button based on guessSubmitted flag -->
+        <button *ngIf="!guessSubmitted" (click)="checkGuess()">Submit</button>
+
+        <!-- Display Result and Correct Answer -->
+        <p *ngIf="guessResult">
+          {{ guessResult }}! The correct answer was: <strong>{{ correctAnswerDisplay }}</strong>
+        </p>
+
+        <!-- Next Round Button appears only after a guess is submitted -->
+        <button *ngIf="guessResult" (click)="nextRound()">Next Round</button>
+      </div>
+    </div>
+
+    <!-- Game Over Screen with Name Input (appears after game is over) -->
+    <div *ngIf="!gameStarted && gameOverMessage" class="game-over">
+      <h2>{{ gameOverMessage }}</h2>
+
+      <!-- Name submission section if not yet submitted -->
+      <div *ngIf="!nameSubmitted">
+        <label for="playerName">Enter Your Name:</label>
+        <input id="playerName" [(ngModel)]="playerName" placeholder="Name" />
+        <button (click)="submitName()">Submit</button>
+      </div>
+
+      <!-- Start new game button, appears after name is submitted -->
+      <div *ngIf="nameSubmitted">
+        <button (click)="startGame()">Start Game</button>
+      </div>
+    </div>
+  </div>
